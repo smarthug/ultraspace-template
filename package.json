@@ -1,8 +1,11 @@
 {
-  "name": "megic-pwa",
+  "name": "ultraspace-template",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "bin": {
+    "create-ultraspace-app": "./bin/generate-app.js"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

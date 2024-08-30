@@ -16,9 +16,9 @@ export default defineConfig({
       },
 
       manifest: {
-        name: "megic-pwa",
-        short_name: "megic-pwa",
-        description: "megic-pwa",
+        name: "ultraspace-template",
+        short_name: "ultraspace-template",
+        description: "ultraspace-template",
         theme_color: "#ffffff",
       },
 

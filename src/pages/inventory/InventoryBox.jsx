@@ -14,6 +14,7 @@ import clsx from "clsx";
 // import useEnvStore from "../utils/store/envStore";
 
 import { useTokens, Wallet } from "@nice-xrpl/react-xrpl";
+import { useMegicStore } from "../../utils/useMegicStore";
 
 export function ShowNFTs() {
   // The useTokens hook gives you a list of all
@@ -84,10 +85,15 @@ const StyledBox = styled(Paper)(({ theme }) => ({
   },
 }));
 function ItemMenu({ anchorEl, onClose: handleClose }) {
+  const setRideCyberTruck = useMegicStore((state) => state.setRideCyberTruck);
   const open = Boolean(anchorEl);
 
   function OnTheOneRingEquip() {
-    window.dispatchEvent(new Event("the_one_ring"));
+    // window.dispatchEvent(new Event("the_one_ring"));
+
+    console.log("Equip");
+    setRideCyberTruck(true)
+
     handleClose();
   }
 

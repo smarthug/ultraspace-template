@@ -4,8 +4,10 @@ import { useControls } from "leva";
 import { Waluigi } from "./Waluigi2";
 
 import CyberTruck from "./CyberTruck";
+import { useMegicStore } from "../../utils/useMegicStore";
 
 export default function Floor({ size = 10 }) {
+  const rideCyberTruck = useMegicStore((state) => state.rideCyberTruck);
   const settings = useControls("floor", {
     color: { value: "#2a2a2a" },
   });
@@ -19,11 +21,16 @@ export default function Floor({ size = 10 }) {
         </mesh>
       </RigidBody>
 
-      <RigidBody type="fixed"  colliders={"cuboid"}>
+      <RigidBody type="fixed" colliders={"cuboid"}>
         <Waluigi position={[0, 0, 3]} rotation-y={Math.PI} />
       </RigidBody>
 
-      {/* <CyberTruck position={[-3, 0, -2]} rotation-y={Math.PI} /> */}
+      {rideCyberTruck &&
+        <RigidBody type="fixed" colliders={"cuboid"}>
+          <CyberTruck position={[-3, 0, -2]} rotation-y={Math.PI} />
+        </RigidBody>
+
+      }
     </>
   );
 }

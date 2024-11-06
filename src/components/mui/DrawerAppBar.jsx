@@ -21,9 +21,7 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 // import { useMegicStore } from "../../utils/useMegicStore";
 import { useMegicStore } from "../../utils/useMegicStore";
 
-import { WalletInfo } from "../wallet-ui/wallet-info";
-import { WalletBalance } from "../wallet-ui/wallet-balance";
-import { useBalance, Wallet } from "@nice-xrpl/react-xrpl";
+
 const drawerWidth = 240;
 // const navItems = ['Home', 'About', 'Contact'];
 
@@ -111,11 +109,9 @@ function DrawerAppBar(props) {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>
-        <WalletInfo />
+        <div>hello</div>
       </MenuItem>
-      {/* <MenuItem onClick={handleMenuClose}>
-            <WalletBalance />
-          </MenuItem> */}
+
     </Menu>
   );
 
@@ -179,7 +175,7 @@ function DrawerAppBar(props) {
                 {megicPoints}
               </Typography> */}
               {/* <UserMoneyDisplay amount={megicPoints} /> */}
-              
+
               <WalletBalance />
             </IconButton>
           </Box>

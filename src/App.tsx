@@ -9,8 +9,6 @@ import { theme } from "./styles/theme";
 
 import { Outlet } from "react-router-dom";
 
-import { Networks, Wallet, XRPLClient } from "@nice-xrpl/react-xrpl";
-
 const RootContainer = styled(Box)({
   height: "100dvh",
   display: "flex",
@@ -36,14 +34,13 @@ const ContentBox = styled(Box)({
 function App() {
   useEffect(() => {}, []);
   return (
-    <XRPLClient network={Networks.Testnet}>
+    <div>
       <Suspense fallback={<div>Loading...</div>}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <RootContainer>
-            <Wallet seed="sEdSuggZESkLQaECpNwdHf4AybmHZzC">
-              <DrawerAppBar />
-            </Wallet>
+            <DrawerAppBar />
+
             <ContentBox>
               {/* 여기에 콘텐츠를 추가하세요 */}
               <Outlet />
@@ -53,7 +50,7 @@ function App() {
           </RootContainer>
         </ThemeProvider>
       </Suspense>
-    </XRPLClient>
+    </div>
   );
 }
 

@@ -12,7 +12,3 @@ npm run dev
 * Inventory system to transfer,rent and escrow to other users integrated
 * Smart NPC integrated
 * the game is replacable with other game engine's web exports
-
-## XRPL Library Used
-@nice-xrpl/react-xrpl
-

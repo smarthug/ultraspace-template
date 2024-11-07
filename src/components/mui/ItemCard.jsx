@@ -8,8 +8,6 @@ import {
   Button,
 } from "@mui/material";
 
-import { AcceptSellOffer } from "../wallet-ui/accept-sell-nft";
-import { Wallet } from "@nice-xrpl/react-xrpl";
 
 const formatCurrency = (amount) => {
   return new Intl.NumberFormat("en-US", {
@@ -40,11 +38,8 @@ const ItemCard = ({ item, onPurchase, index, price, uri }) => {
           {/* ${item.price} */}
           {formatCurrency(price)}
         </Typography>
-       
-        {/* <AcceptSellOffer index={index} uri={uri} /> */}
-        <Wallet seed="sEdSuggZESkLQaECpNwdHf4AybmHZzC">
-          <AcceptSellOffer index={index} />
-        </Wallet>
+
+
       </CardContent>
     </Card>
   );

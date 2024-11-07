@@ -9,6 +9,19 @@ import { theme } from "./styles/theme";
 
 import { Outlet } from "react-router-dom";
 
+import "@rainbow-me/rainbowkit/styles.css";
+import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { WagmiProvider } from "wagmi";
+import { mainnet, polygon, optimism, arbitrum, base } from "wagmi/chains";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+
+const config = getDefaultConfig({
+  appName: "My RainbowKit App",
+  projectId: "YOUR_PROJECT_ID",
+  chains: [mainnet, polygon, optimism, arbitrum, base],
+  ssr: false, // If your dApp uses server side rendering (SSR)
+});
+
 const RootContainer = styled(Box)({
   height: "100dvh",
   display: "flex",
@@ -31,26 +44,32 @@ const ContentBox = styled(Box)({
   marginBottom: "56px",
 });
 
+const queryClient = new QueryClient();
+
 function App() {
   useEffect(() => {}, []);
   return (
-    <div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <RootContainer>
-            <DrawerAppBar />
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider>
+          <Suspense fallback={<div>Loading...</div>}>
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <RootContainer>
+                <DrawerAppBar />
 
-            <ContentBox>
-              {/* 여기에 콘텐츠를 추가하세요 */}
-              <Outlet />
-            </ContentBox>
-            <BottomNav />
-            <PWABadge />
-          </RootContainer>
-        </ThemeProvider>
-      </Suspense>
-    </div>
+                <ContentBox>
+                  {/* 여기에 콘텐츠를 추가하세요 */}
+                  <Outlet />
+                </ContentBox>
+                <BottomNav />
+                <PWABadge />
+              </RootContainer>
+            </ThemeProvider>
+          </Suspense>
+        </RainbowKitProvider>
+      </QueryClientProvider>
+    </WagmiProvider>
   );
 }
 

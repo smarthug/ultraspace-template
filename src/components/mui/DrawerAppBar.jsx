@@ -111,9 +111,11 @@ function DrawerAppBar(props) {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>
-        <div>hello</div>
+        <div>Profile</div>
       </MenuItem>
-
+      <MenuItem onClick={handleMenuClose}>
+        <div>Setting</div>
+      </MenuItem>
     </Menu>
   );
 
@@ -178,7 +180,7 @@ function DrawerAppBar(props) {
               </Typography> */}
               {/* <UserMoneyDisplay amount={megicPoints} /> */}
 
-              <div>balance</div>
+              {/* <div>balance</div> */}
             </IconButton>
           </Box>
 

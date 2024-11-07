@@ -16,8 +16,8 @@ import { mainnet, skaleNebulaTestnet, skaleNebula, filecoin, filecoinCalibration
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const config = getDefaultConfig({
-  appName: "My RainbowKit App",
-  projectId: "YOUR_PROJECT_ID",
+  appName: "UltraSpace",
+  projectId: "fc8b5ed20be8c39819928d4a45318f7e",
   chains: [mainnet, skaleNebulaTestnet, skaleNebula, filecoin, filecoinCalibration, filecoinHyperspace],
   ssr: false, // If your dApp uses server side rendering (SSR)
 });

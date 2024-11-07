@@ -1,6 +1,7 @@
 // src/App.js
 import React, { useState } from "react";
 import { Container, Grid } from "@mui/material";
+import ItemCard from "./ItemCard";
 
 
 const items = [
@@ -31,7 +32,7 @@ const App = () => {
     >
       <Grid container spacing={2}>
         <Grid item xs={12} sm={12} md={12}>
-          <div>Shop</div>
+            <ItemCard item={items[0]} onPurchase={handlePurchase} />
         </Grid>
       </Grid>
     </Container>

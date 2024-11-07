@@ -22,6 +22,7 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { useMegicStore } from "../../utils/useMegicStore";
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import TokenBalance from "../TokenBalance";
 
 
 const drawerWidth = 240;
@@ -181,6 +182,7 @@ function DrawerAppBar(props) {
               {/* <UserMoneyDisplay amount={megicPoints} /> */}
 
               {/* <div>balance</div> */}
+              <TokenBalance tokenAddress="0x00c83aeCC790e8a4453e5dD3B0B4b3680501a7A7" tokenDecimals={18} />
             </IconButton>
           </Box>
 

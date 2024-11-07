@@ -21,6 +21,8 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 // import { useMegicStore } from "../../utils/useMegicStore";
 import { useMegicStore } from "../../utils/useMegicStore";
 
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 
 const drawerWidth = 240;
 // const navItems = ['Home', 'About', 'Contact'];
@@ -199,6 +201,15 @@ function DrawerAppBar(props) {
                 <NotificationsIcon />
               </Badge>
             </IconButton> */}
+            <Box
+              sx={{
+                display: { xs: "flex", md: "flex" },
+                alignItems: "center",
+              }}
+            >
+
+              <ConnectButton />
+            </Box>
             <IconButton
               size="large"
               edge="end"
@@ -240,19 +251,4 @@ function DrawerAppBar(props) {
 
 export default DrawerAppBar;
 
-{
-  /* <Box component="main" sx={{ p: 0 }}>
-        <Toolbar
-         style={{
-            backgroundColor: 'blue',
-        }}
-        />
-          <div 
-            style={{
-                backgroundColor: 'red',
-            }}
-          >
-            hello
-          </div>
-      </Box> */
-}
+

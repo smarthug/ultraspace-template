@@ -52,6 +52,9 @@
     "vite-plugin-pwa": "^0.20.0",
     "workbox-core": "^7.1.0"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
+  },
   "overrides": {
     "sharp": "0.32.6",
     "sharp-ico": "0.1.5"

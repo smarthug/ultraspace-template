@@ -176,7 +176,7 @@ function DrawerAppBar(props) {
               </Typography> */}
               {/* <UserMoneyDisplay amount={megicPoints} /> */}
 
-              <WalletBalance />
+              <div>balance</div>
             </IconButton>
           </Box>
 

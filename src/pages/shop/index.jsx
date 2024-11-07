@@ -31,7 +31,7 @@ const App = () => {
     >
       <Grid container spacing={2}>
         <Grid item xs={12} sm={12} md={12}>
-          <ShowNFTs />
+          <div>Shop</div>
         </Grid>
       </Grid>
     </Container>
